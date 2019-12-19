@@ -24,7 +24,7 @@
         // Search function to find a specific currency
 
         function displaySearchCurrencies(id) {
-            $("#loading").css("display", "block");
+          
             $.getJSON((`https://api.coingecko.com/api/v3/coins/${id}`), coins => {
                 $(".container").empty();
                 if (id === coins.id) {
@@ -41,7 +41,7 @@
                     const allDetails = `<div id =${coins.id} class="card card-block col-12 col-md-4">
                                 ${symbol}${name}${toggleButton}${button}${moreInfo}</div>`;
                     $(".container").append(allDetails);
-                    $("#loading").css("display", "none");
+               
 
                 }
 
