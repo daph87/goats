@@ -3,7 +3,6 @@
         var currenciesArray = [];
         let onChecked = [];
         let checked = [];
-        let verify = "";
         let found = [];
 
 
@@ -54,7 +53,7 @@
                                       More Info</button></p>`;
             const toggleButton = `<label class="switch">
                                       <input ${checked[i]} type="checkbox"  id="${coins[i].symbol}Toggle" class="checkBoxClass" value="${coins[i].symbol}">
-                                      <span class="slider round"></span>
+                                      <span class="slider round ${checked[i]}"></span>
                                       </label>`;
             const moreInfo = `<div class="${coins[i].id}"></div>`;
             const allDetails = `<div id =${coins[i].id} class="card card-block col-12 col-md-4">
@@ -71,13 +70,10 @@
                 $(".container").empty();
                 let localHostCurrencies;
                 localHostCurrencies = JSON.parse(localStorage.getItem("coins"));
-                console.log(localHostCurrencies);
 
                 if (localHostCurrencies === null) {
-
                     for (let i = 0; i < 100; i++) {
                         currencyContentBox(coins, i);
-
                     }
                 }
                 else {
@@ -101,11 +97,8 @@
                         currencyContentBox(coins, i);
                     }
                 }
-
-
-
-                // }).fail(() => {
-                //     alert(`No data found`);
+                }).fail(() => {
+                    alert(`No data found`);
             });
         }
 
@@ -122,13 +115,10 @@
 
             // check if exist in local storage
             var str = localStorage.getItem(id);
-            console.log("str from local storage: " + str)
 
             // if no -> get from url, and save result to local storage
             if (str === null) {
                 $.getJSON("https://api.coingecko.com/api/v3/coins/" + id, json => {
-
-                    console.log("got json from url")
                     var miniJson = {};
                     miniJson.image = {};
                     miniJson.image.small = json.image.small;
@@ -141,11 +131,10 @@
 
                     var strJson = JSON.stringify(miniJson);
                     localStorage.setItem(id, strJson);
-                    console.log("save minijson in storage")
                     updateCoinInfo(id, strJson)
                     setTimeout(() => {
                         localStorage.removeItem(id);
-                    }, 120000);
+                    }, 12000);
                 }).fail(() => {
                     alert(`No data found`);
                 });
@@ -153,7 +142,6 @@
 
             // if yes -> get data from storage and put in html
             else {
-                console.log("displaying from local storage")
                 updateCoinInfo(id, str);
             }
         }
@@ -183,20 +171,28 @@
         });
 
         // Choose 5 currencies with toggle
-        $(".container").on("click", ".checkBoxClass", function () {
-
-            if ($(this).is(":checked") && currenciesArray.length < 5) {
-                currenciesArray.push($(this).val().toUpperCase());
-                let currenciesStr = JSON.stringify(currenciesArray);
-                localStorage.setItem("coins", currenciesStr);
-            }
-
-            else {
+        $(".container").on("change", ".checkBoxClass", function () {
+           
+            if ($(this).is(":checked") && currenciesArray.length >=5) {
                 $(this).prop('checked', false);
                 $(`#myModal`).modal();
                 $(".modal-body").empty(),
                     modalContent();
+            }
 
+            else if ($(this).is(":checked")) {
+                currenciesArray.push($(this).val().toUpperCase());
+                let currenciesStr = JSON.stringify(currenciesArray);
+                localStorage.setItem("coins", currenciesStr);
+                
+            }
+
+            else if ($(this).prop('checked', false)) {
+                let coinValue = $(this)[0].value.toUpperCase();
+                let index = currenciesArray.indexOf(coinValue);
+                currenciesArray.splice(index, 1);
+                let currenciesStr = JSON.stringify(currenciesArray);
+                localStorage.setItem("coins", currenciesStr);
             }
         })
 
@@ -205,10 +201,8 @@
         function removeCoin(value) {
             let local = localStorage.getItem("coins");
             let parseCoin = JSON.parse(local);
-            if (parseCoin === null){
+            if (parseCoin === null) {
                 parseCoin = currenciesArray;
-                console.log(parseCoin, "parseCoin");
-                console.log(currenciesArray, "currencies")
             }
             let item = currenciesArray;
 
@@ -217,7 +211,6 @@
                     currenciesArray.splice(i, 1);
                     let parseCoinStr = JSON.stringify(currenciesArray);
                     localStorage.setItem("coins", parseCoinStr);
-                    console.log(currenciesArray, "after removal currencies")
                 }
             }
         }
