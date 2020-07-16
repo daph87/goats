@@ -1,6 +1,10 @@
 (() => {
     $(() => {
         var currenciesArray = [];
+        let onChecked = [];
+        let checked = [];
+        let verify = "";
+        let found = [];
 
 
         // display Currencies when loading the page
@@ -9,7 +13,6 @@
         // display Currencies when clicking on Coins Button
 
         $("#coinsButton").click(function () {
-            currenciesArray = [];
             displayCurrencies();
         });
 
@@ -41,13 +44,16 @@
 
         //function currencies content
         function currencyContentBox(coins, i) {
+
+
+
             const symbol = `<h5 class="card-text">${coins[i].symbol}</h5>`;
             const name = `<p class="card-title">${coins[i].name}</p>`;
             const button = `<p><button id="${coins[i].id}" class="btn btn-primary" data-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="collapseExample">
                                       More Info</button></p>`;
             const toggleButton = `<label class="switch">
-                                      <input type="checkbox" id="${coins[i].symbol}Toggle" class="checkBoxClass" value="${coins[i].symbol}">
+                                      <input ${checked[i]} type="checkbox"  id="${coins[i].symbol}Toggle" class="checkBoxClass" value="${coins[i].symbol}">
                                       <span class="slider round"></span>
                                       </label>`;
             const moreInfo = `<div class="${coins[i].id}"></div>`;
@@ -63,12 +69,43 @@
             $("#loading").css("display", "block");
             $.getJSON((`https://api.coingecko.com/api/v3/coins/list`), coins => {
                 $(".container").empty();
-                for (let i = 0; i < 100; i++) {
-                    currencyContentBox(coins, i);
+                let localHostCurrencies;
+                localHostCurrencies = JSON.parse(localStorage.getItem("coins"));
+                console.log(localHostCurrencies);
+
+                if (localHostCurrencies === null) {
+
+                    for (let i = 0; i < 100; i++) {
+                        currencyContentBox(coins, i);
+
+                    }
+                }
+                else {
+
+                    currenciesArray = localHostCurrencies;
+
+                    for (let i = 0; i < 100; i++) {
+                        onChecked = [];
+                        for (let j = 0; j < localHostCurrencies.length; j++) {
+                            if (localHostCurrencies[j] === coins[i].symbol.toUpperCase()) {
+                                onChecked.push("checked");
+
+                            }
+                            else if (localHostCurrencies[j] !== coins[i].symbol.toUpperCase()) {
+                                onChecked.push("");
+                            }
+                            found = onChecked.find(element => element === "checked");
+
+                        }
+                        checked.push(found);
+                        currencyContentBox(coins, i);
+                    }
                 }
 
-            }).fail(() => {
-                alert(`No data found`);
+
+
+                // }).fail(() => {
+                //     alert(`No data found`);
             });
         }
 
@@ -166,16 +203,21 @@
         //Remove coin with modal
 
         function removeCoin(value) {
-            let item = localStorage.getItem("coins");
-            let parseCoin = JSON.parse(item);
+            let local = localStorage.getItem("coins");
+            let parseCoin = JSON.parse(local);
+            if (parseCoin === null){
+                parseCoin = currenciesArray;
+                console.log(parseCoin, "parseCoin");
+                console.log(currenciesArray, "currencies")
+            }
+            let item = currenciesArray;
 
-            for (let i = 0; i < parseCoin.length; i++) {
-                if (parseCoin[i] === value) {
-                    parseCoin.splice(i, 1);
+            for (let i = 0; i < currenciesArray.length; i++) {
+                if (item[i] === value) {
                     currenciesArray.splice(i, 1);
-                    let parseCoinStr = JSON.stringify(parseCoin);
+                    let parseCoinStr = JSON.stringify(currenciesArray);
                     localStorage.setItem("coins", parseCoinStr);
-
+                    console.log(currenciesArray, "after removal currencies")
                 }
             }
         }
