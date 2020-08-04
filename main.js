@@ -44,8 +44,6 @@
         //function currencies content
         function currencyContentBox(coins, i) {
 
-
-
             const symbol = `<h5 class="card-text">${coins[i].symbol}</h5>`;
             const name = `<p class="card-title">${coins[i].name}</p>`;
             const button = `<p><button id="${coins[i].id}" class="btn btn-primary" data-toggle="collapse"

@@ -63,6 +63,7 @@ html {
   #allDetails {
     text-align: left;
   }
+ 
 }
 
 /* Tablet Styles */
@@ -135,8 +136,22 @@ html {
     margin-bottom: 20px;
   }
 
+  #infoProject {
+    text-align: center;
+    list-style-type: none;
+}
+
   #allDetails {
     text-align: center;
+    max-width: 70%;
+    background-color: white;
+    border-radius: 13px;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  #allDetails > h5 {
+    padding:15px;
   }
 
   #titleSpan {
@@ -304,6 +319,5 @@ input:checked + .slider:before {
 }
 
 #infoProject{
-  text-align:left;
   color:darkred;
 }
