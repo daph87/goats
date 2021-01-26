@@ -1,0 +1,120 @@
+{
+  "goats": [
+    {
+      "sex": "Male",
+      "birthDate": "2021-01-31",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "",
+      "colorCode": "1",
+      "vaccins": "",
+      "id": 1
+    },
+    {
+      "sex": null,
+      "birthDate": "2021-01-27",
+      "pregnantStatus": null,
+      "sold": null,
+      "medicalHistory": "b",
+      "colorCode": "b",
+      "vaccins": "b",
+      "id": 6
+    },
+    {
+      "sex": "Male",
+      "birthDate": "2021-01-06",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "jokjk",
+      "colorCode": "Y",
+      "vaccins": "klkl",
+      "id": 8
+    },
+    {
+      "sex": "Female",
+      "birthDate": "",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "",
+      "colorCode": "",
+      "vaccins": "",
+      "id": 9
+    },
+    {
+      "sex": "Female",
+      "birthDate": "",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "",
+      "colorCode": "",
+      "vaccins": "",
+      "id": 10
+    },
+    {
+      "sex": "Male",
+      "birthDate": "",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "",
+      "colorCode": "b",
+      "vaccins": "",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": "2",
+      "username": "eyal59",
+      "password": "sylwia76",
+      "admin": "yes"
+    },
+    {
+      "id": "2",
+      "username": "proto",
+      "password": "proto",
+      "admin": "no"
+    },
+    {
+      "username": "daphne",
+      "password": "daphne",
+      "admin": "yes",
+      "id": "cH2s38L"
+    },
+    {
+      "username": "mike",
+      "password": "mike",
+      "admin": "no",
+      "id": "tHlEYR8"
+    },
+    {
+      "username": "fdf",
+      "password": "fdf",
+      "admin": "no",
+      "id": "FiHKke2"
+    },
+    {
+      "username": "ccx",
+      "password": "cxc",
+      "admin": "no",
+      "id": "7s7jh6I"
+    },
+    {
+      "username": "cx",
+      "password": "cx",
+      "admin": "yes",
+      "id": "r0uQdh6"
+    },
+    {
+      "username": "gddf",
+      "password": "gdfg",
+      "admin": "no",
+      "id": "6-Do2a5"
+    },
+    {
+      "username": "hfh",
+      "password": "hfh",
+      "admin": "no",
+      "id": "_vbtZpV"
+    }
+  ]
+}
