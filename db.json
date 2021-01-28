@@ -1,0 +1,84 @@
+{
+  "goats": [
+    {
+      "sex": "Male",
+      "birthDate": "2021-01-05",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "",
+      "colorCode": "001Y",
+      "vaccins": "",
+      "id": 1
+    },
+    {
+      "sex": "Male",
+      "birthDate": "2021-04-21",
+      "pregnantStatus": "Yes",
+      "sold": "No",
+      "medicalHistory": "",
+      "colorCode": "879b",
+      "vaccins": "",
+      "id": 3
+    },
+    {
+      "sex": "Female",
+      "birthDate": "2021-11-17",
+      "pregnantStatus": "Yes",
+      "sold": "No",
+      "medicalHistory": "",
+      "colorCode": "8975B",
+      "vaccins": "",
+      "id": 4
+    },
+    {
+      "sex": "Male",
+      "birthDate": "2021-01-05",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "Typhus",
+      "colorCode": "147174Yellow",
+      "vaccins": "Typhus",
+      "id": 5
+    },
+    {
+      "sex": "Male",
+      "birthDate": "2020-12-16",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "No medical history",
+      "colorCode": "456Y",
+      "vaccins": "covid19",
+      "id": 6
+    },
+    {
+      "sex": "Female",
+      "birthDate": "2021-01-07",
+      "pregnantStatus": "Yes",
+      "sold": "Yes",
+      "medicalHistory": "NO",
+      "colorCode": "YYYY",
+      "vaccins": "NO",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "eyal59",
+      "password": "sylwia76",
+      "admin": "yes"
+    },
+    {
+      "username": "daph",
+      "password": "daph",
+      "admin": "no",
+      "id": "WRM_DEn"
+    },
+    {
+      "username": "emma",
+      "password": "emma",
+      "admin": "yes",
+      "id": "r4P98RY"
+    }
+  ]
+}
