@@ -2,116 +2,66 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Cryptonite</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cryptonite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- css -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-  <!-- script -->
+    <!-- script -->
 
-  <script src="jQuery.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-  <script src="main.js"></script>
+    <script src="jQuery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
+    <div>
+        <h1 id="home">
+            Let's count Goats
+        </h1>
+        <img id="loading" src="assets/images/cat.gif">
 
-          <h4 class="modal-title"><b>Please Delete one coin only</b></h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div id="buttons">
+            <button id="logOutButton" class="menu btn btn btn-outline-dark btn-lg mobhide">Logout</button>
+            <button id="registerButton" class="menu btn btn-outline-secondary btn-lg mobhide">Register</button>
+            <button id="addButton" class="menu btn btn-outline-danger btn-lg mobhide">Add</button><br>
+            <button id="usersButton" class="menu btn btn-outline-warning btn-lg mobhide">Users</button><br>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- search box -->
+    <div id="searchDiv">
+        <div id="search" class="mobhide">
+        </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+        <div class="container-change">
 
         </div>
-        <div class="modal-body">
+
+        <div class="container">
+
+
         </div>
-        <div class="modal-footer">
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  </div>
-  <div>
-    <h1><b>Let's count Goats</span></b></h1>
-    <div id="buttons">
-      <!-- <button id="coinsButton" class="btn btn-danger btn-lg">Coins</button>
-      <button id="reportsButton" class="btn btn btn-dark btn-lg">Reports</button>
-      <button id="aboutButton" class="btn btn-secondary btn-lg">About</button><br> -->
-      <!-- <button id="coinsButton" class="btn btn-danger btn-lg">Edit</button> -->
-      <button id="logOutButton" class="btn btn btn-dark btn-lg">Logout</button>
-      <button id="registerButton" class="btn btn-secondary btn-lg">Register</button>
-      <button id="addButton" class="btn btn-danger btn-lg">Add</button><br>
-    </div>
-  </div>
-  <!-- <div class="containerParallax"></div> -->
-  <!-- <img id="loading" src="assets/images/bitcoin.gif"> -->
-
-
-
-
-<!-- search box -->
-  <div id="search">
-  </div>
-
-
-  <div class="container-fluid">
-    
-    <div class="container">
 
 
     </div>
-    <div class="container-change">
-      
-      <!-- <div id="form" class=form-group> -->
-        <!-- <label for="sex">Sex: </label>
-        <select multiple class="form-control" id="addSex">
-          <option>Male</option>
-          <option>Female</option>
-        </select>
-  
-        <label for="birthDate">Birth Date: </label>
-        <input type="date" class="form-control" name="birthDate" id="birthDate" >
-        <label for="pregnantStatus">Pregnant Status</label>
-        <select multiple class="form-control" id="pregnantStatus">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-        <label for="sold">Sold: </label>
-        <select multiple class="form-control" id="soldInput">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-        <label for="colorCode">Color Code: </label>
-  
-        <input type="text" class="form-control" name="colorCode" id="colorCode" >
-        <label for="medicalHistory">Medical History</label>
-        
-  
-        <textarea type="text" class="form-control"  name="medicalHistory" id="medicalHistory" ></textarea>
-        <button class="btn btn-secondary" id="add-button">Add a goat</button> -->
-      <!-- </div> -->
-      
-    </div>
-
-  </div>
 
 </body>
 
 </html>
-
-
